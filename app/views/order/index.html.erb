@@ -1,0 +1,115 @@
+     <section class="jumbotron">
+        <div class="container">
+          <h1 class="jumbotron-heading">Send Parcel</h1>
+                
+<div class="card">
+  <div class="card-body">
+           <%= form_for @order, :html => {:class => "form-inline"} do |f| %>
+           <div class="row">
+            <div class="form-group col-md-4">
+              <%= f.label :sender_full_name, "Sender Full Name:", class: "" %>
+                <%= f.text_field :sender_full_name, class: "form-control" %>
+            </div>
+
+             <div class="form-group col-md-4">
+              <%= f.label :sender_email, "Sender Email:", class: "" %>
+                <%= f.text_field :sender_email, class: "form-control" %>
+            </div>
+
+            <div class="form-group col-md-4">
+              <%= f.label :sender_address, "Sender Address", class: "" %>
+                <%= f.text_field :sender_address, class: "form-control" %>
+            </div>
+
+            </div>
+
+            <div class="row">
+
+              <div class="form-group col-md-6">
+              <%= f.label :sender_mobile, "Sender Mobile", class: "" %>
+                <%= f.text_field :sender_mobile, class: "form-control" %>
+            </div>
+
+            <div class="form-group col-md-6">
+              <%= f.label :sender_pincode, "Sender Pincode", class: "" %>
+                <%= f.text_field :sender_pincode, class: "form-control" %>
+            </div>
+
+               </div>
+
+            <hr />
+
+            <div class="row">
+
+            <div class="form-group col-md-4">
+              <%= f.label :receiver_full_name, "receiver Full Name:", class: "" %>
+                <%= f.text_field :receiver_full_name, class: "form-control" %>
+            </div>
+
+               <div class="form-group col-md-4">
+              <%= f.label :receiver_email, "Receiver Email:", class: "" %>
+                <%= f.text_field :receiver_email, class: "form-control" %>
+            </div>
+
+            <div class="form-group col-md-4">
+              <%= f.label :receiver_address, "receiver Address", class: "" %>
+                <%= f.text_field :receiver_address, class: "form-control" %>
+            </div>
+
+            </div>
+
+            <div class="row">
+
+              <div class="form-group col-md-6">
+              <%= f.label :receiver_mobile, "receiver Mobile", class: "" %>
+                <%= f.text_field :receiver_mobile, class: "form-control" %>
+            </div>
+
+            <div class="form-group col-md-6">
+              <%= f.label :receiver_pincode, "receiver Pincode", class: "" %>
+                <%= f.text_field :receiver_pincode, class: "form-control" %>
+            </div>
+
+                </div>
+
+            <hr />
+
+               <div class="row">
+
+            <div class="form-group col-md-3">
+              <%= f.label :parcel_weight, "parcel weight (in gram)", class: "" %>
+                <%= f.number_field :parcel_weight, class: "form-control" %>
+            </div>
+
+           <div class="form-group col-md-3">
+              <%= f.label :cost_of_service, "Cost of Service (Rs)", class: "" %>
+                <%= f.text_field :cost_of_service, class: "form-control" %>
+            </div>
+
+            <div class="form-group col-md-3">
+                <%= f.label :type_of_service %><br />
+                <%= f.label :type_of_service, "Speed Post", :value => "1"  %>
+                <%= f.radio_button :type_of_service, 1 %>
+                <%= f.label :type_of_service, "Regular", :value => "2" %>
+                <%= f.radio_button :type_of_service, 2, :checked => true %>
+            </div>
+
+            <div class="form-group col-md-3">
+                <%= f.label :payment_mode %><br />
+                <%= f.label :payment_mode, "COD", :value => "1"  %>
+                <%= f.radio_button :payment_mode, 1 %>
+                <%= f.label :payment_mode, "Prepaid", :value => "2" %>
+                <%= f.radio_button :payment_mode, 2, :checked => true %>
+            </div>
+
+           </div>
+
+            <div class="text-center  p-3">
+              <%= f.submit "Submit", class: "btn btn-default btn-primary" %>  
+            </div>
+            <% end %>
+  </div>
+</div>
+
+          </div>
+      </section>
